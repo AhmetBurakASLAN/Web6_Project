@@ -48,7 +48,7 @@ namespace Proje_11_Metot_Örnekleri_1
             }
             string tekrarOynama()
             {
-                Console.WriteLine(" tekrar oynamak istiyor musunuz? E/H");
+                Console.WriteLine(" tekrar oynamak istiyor musunuz? (E yazınız)");
                 string istek = Console.ReadLine();
                 return istek;
             }
@@ -56,7 +56,7 @@ namespace Proje_11_Metot_Örnekleri_1
             int rastgeleSayı1 = rastgeleSayı();
             Console.WriteLine(rastgeleSayı1);
             int i = 1;
-            while (i<6)
+            while (i<6 )
             {
                 int tahmin = tahminYapma();
                 int kazanma = karsılastırma(tahmin, i, rastgeleSayı1);
@@ -68,6 +68,7 @@ namespace Proje_11_Metot_Örnekleri_1
                 {
                     if (tekrarOynama() == "E")
                     {
+                        Console.Clear();
                         i = 0;
                     }
                     
@@ -76,6 +77,9 @@ namespace Proje_11_Metot_Örnekleri_1
             }
             Console.ReadLine();
         
-        }
+        }     
+
+
+
     }
 }
