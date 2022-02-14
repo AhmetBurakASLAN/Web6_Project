@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form01_TemelKontroller", "Form01_TemelKontroller\Form01_TemelKontroller.csproj", "{0830D3BB-565D-4AC0-A66B-B5087C97B27F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0830D3BB-565D-4AC0-A66B-B5087C97B27F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0830D3BB-565D-4AC0-A66B-B5087C97B27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0830D3BB-565D-4AC0-A66B-B5087C97B27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0830D3BB-565D-4AC0-A66B-B5087C97B27F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {151E4E2B-25AE-4E86-9DBF-F32B0A7EAB5D}
+	EndGlobalSection
+EndGlobal
