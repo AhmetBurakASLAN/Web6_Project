@@ -51,6 +51,7 @@ namespace Telefon_Rehberi_V1
             // 
             // dgvKisiler
             // 
+            this.dgvKisiler.AllowUserToAddRows = false;
             this.dgvKisiler.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgvKisiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKisiler.Location = new System.Drawing.Point(25, 74);
@@ -176,8 +177,9 @@ namespace Telefon_Rehberi_V1
             this.btnYeni.Name = "btnYeni";
             this.btnYeni.Size = new System.Drawing.Size(100, 32);
             this.btnYeni.TabIndex = 12;
-            this.btnYeni.Text = "Yeni ";
+            this.btnYeni.Text = "Yeni";
             this.btnYeni.UseVisualStyleBackColor = true;
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // btnDuzelt
             // 
@@ -199,6 +201,7 @@ namespace Telefon_Rehberi_V1
             this.btnSil.TabIndex = 14;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // txtAranan
             // 
@@ -207,6 +210,8 @@ namespace Telefon_Rehberi_V1
             this.txtAranan.Name = "txtAranan";
             this.txtAranan.Size = new System.Drawing.Size(267, 26);
             this.txtAranan.TabIndex = 15;
+            this.txtAranan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAranan_KeyPress);
+            this.txtAranan.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtAranan_KeyUp);
             // 
             // btnAra
             // 
@@ -217,6 +222,7 @@ namespace Telefon_Rehberi_V1
             this.btnAra.TabIndex = 16;
             this.btnAra.Text = "Ara";
             this.btnAra.UseVisualStyleBackColor = true;
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // Form1
             // 

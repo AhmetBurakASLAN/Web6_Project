@@ -83,6 +83,56 @@ namespace Telefon_Rehberi_V1
             baglanti.Close();
             KisileriGetir();
         }
+        void   Sil()
+        {
+            String ID = lblId.Text;
+            sorguCümlesi = $"DELETE  FROM  tblKisiler where ID='{ID}'";
+            baglanti = new SqlConnection(baglantiCümlesi);
+            komut = new SqlCommand(sorguCümlesi, baglanti);
+            baglanti.Open();
+            komut.ExecuteNonQuery();
+            baglanti.Close();
+            KisileriGetir();
+
+        }
+        void YeniKayıt()
+        {
+            if (btnYeni.Text == "Yeni")
+            {
+                //Kayıt girilip kaydedilmesi işlemleri
+                btnYeni.Text = "Kaydet";
+                Temizle();
+            }
+            else
+            {
+                //Yeni kayıt eklemeye hazır hale getirme işlemleri
+                //Yeni default
+                btnYeni.Text = "Yeni";
+                string ad = txtAd.Text;
+                string soyad = txtSoyad.Text;
+                char cinsiyet;
+                if (rdbKadin.Checked == true)
+                {
+                    cinsiyet = 'K';
+
+                }
+                else
+                {
+                    cinsiyet = 'E';
+
+                }
+                string tel = txtTel.Text;
+                String ID = lblId.Text;
+                sorguCümlesi =$"INSERT INTO tblKisiler VALUES ('{ad}','{soyad}','{cinsiyet}','{tel}')";
+                baglanti = new SqlConnection(baglantiCümlesi);
+                komut = new SqlCommand(sorguCümlesi, baglanti);
+                baglanti.Open();
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                KisileriGetir();
+            }
+
+        }
         private void dgvKisiler_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             Aktar();
@@ -91,6 +141,52 @@ namespace Telefon_Rehberi_V1
         private void btnDuzelt_Click(object sender, EventArgs e)
         {
             Düzelt();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            Sil();
+        }
+        void Temizle()
+        {
+            lblId.Text = "Yeni Kayıt";
+            txtAd.ResetText();
+            txtSoyad.ResetText();
+            rdbKadin.Checked = true;
+            txtTel.ResetText();
+            
+                  
+
+        }
+        private void btnYeni_Click(object sender, EventArgs e)
+        {
+
+            YeniKayıt();
+        }
+        void   Ara()
+        {
+            string aranan = txtAranan.Text;
+            DataView dw = dt.DefaultView;
+            dw.RowFilter =$"Ad LIKE '{aranan}%'";
+
+        }
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            Ara();
+
+        }
+
+        private void txtAranan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //if (e.KeyChar==(char)Keys.Enter)
+            //{
+            //    Ara();
+            //}
+        }
+
+        private void txtAranan_KeyUp(object sender, KeyEventArgs e)
+        {
+            Ara();
         }
     }
 }
