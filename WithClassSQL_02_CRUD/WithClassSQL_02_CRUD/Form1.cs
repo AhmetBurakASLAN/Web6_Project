@@ -12,43 +12,24 @@ namespace WithClassSQL_02_CRUD
 {
     public partial class FormAna : Form
     {
-        VeriTabani vt = new VeriTabani();
+        
         public FormAna()
         {
             InitializeComponent();
         }
 
-        void Doldur()
-        {
+        
+        //ekrandan datagrid viewi çıkardğımız için buna gerek kalmadı.
+        ////void Doldur()
+        ////{
 
-
-            dgvHastalar.DataSource = vt.HastalariListele();
-        }
+        ////    sorguCümlesi = $"SELECT * FROM tblHastalar";
+        ////    dgvHastalar.DataSource = vt.KayitListele(sorguCümlesi);
+        ////}
        
-
-        private void btnYeniKayit_Click(object sender, EventArgs e)
-        {
-            FormYenikayit frmYeni = new FormYenikayit();
-            frmYeni.Show();
-
-        }
-
-        private void FormAna_Activated(object sender, EventArgs e)
-        {
-            Doldur();
-        }
-
-        private void FormAna_Load(object sender, EventArgs e)
-        {
-            Doldur();
-        }
-
-        private void btnDuzelt_Click(object sender, EventArgs e)
-        {
-            FormDuzelt formDuzelt = new FormDuzelt();
-            formDuzelt.Show();
-                this.Hide();
-        }
+                
+      
+        
 
         private void FormAna_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -58,6 +39,21 @@ namespace WithClassSQL_02_CRUD
         private void btnKapat_Click(object sender, EventArgs e)
         {
            Application.Exit();
+        }
+
+        private void btnHastalar_Click(object sender, EventArgs e)
+        {
+            FormHastalar formHastalar = new FormHastalar();
+            formHastalar.Show();
+            this.Hide();
+            
+        }
+
+        private void btnBolumler_Click(object sender, EventArgs e)
+        {
+            FormBolumler formbolumler = new FormBolumler();
+            formbolumler.Show();
+            this.Hide();
         }
     }
 }

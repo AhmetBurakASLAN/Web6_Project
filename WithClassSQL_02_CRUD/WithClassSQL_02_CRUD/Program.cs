@@ -16,7 +16,7 @@ namespace WithClassSQL_02_CRUD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAna());
+            Application.Run(new FormRandevu());
         }
     }
 }

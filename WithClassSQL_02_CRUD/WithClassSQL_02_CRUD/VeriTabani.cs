@@ -41,18 +41,17 @@ namespace WithClassSQL_02_CRUD
 
             }
         }
-        public DataTable HastalariListele()
+        public DataTable KayitListele(string sorguCümlesi)
         {
-            sorguCümlesi = $"SELECT * FROM tblHastalar";
+            
             adapter = new SqlDataAdapter(sorguCümlesi, Baglan());
             dt = new DataTable();
             adapter.Fill(dt);
             return dt;
         }
-        public void Ekle(string tcNo, string ad, string soyad, string cinsiyet, string adres,string telefon, string mail)
+        public void Islem(string sorguCümlesi)
         {
             
-                sorguCümlesi = $"INSERT INTO tblHastalar(TcNo,Ad,Soyad,Cinsiyet) VALUES ('{tcNo}','{ad}','{soyad}','{cinsiyet}')";
                 komut = new SqlCommand(sorguCümlesi, Baglan());
                 komut.ExecuteNonQuery();
                 Kapat();
@@ -61,23 +60,8 @@ namespace WithClassSQL_02_CRUD
             
         }
 
-        public void Düzelt(string ID,string tcNo, string ad, string soyad, string cinsiyet, string adres, string telefon, string mail)
-        {
-          
-                sorguCümlesi = $"UPDATE tblHastalar SET  TcNo='{tcNo}',Ad='{ad}',Soyad='{soyad}',Cinsiyet='{cinsiyet}' where ID='{ID}'";
-                komut = new SqlCommand(sorguCümlesi, Baglan());
-                komut.ExecuteNonQuery();
-                Kapat();
-           
-            
-        }
-        public void Sil(string ID)
-        {
-            sorguCümlesi = $"DELETE  FROM  tblHastalar  where ID='{ID}'";
-            komut = new SqlCommand(sorguCümlesi, Baglan());
-            komut.ExecuteNonQuery();
-            Kapat();
-        }
+       
+        
         
     }
 }

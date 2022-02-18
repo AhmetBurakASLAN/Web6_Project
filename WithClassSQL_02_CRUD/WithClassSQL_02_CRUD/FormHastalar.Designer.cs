@@ -1,7 +1,7 @@
 ﻿
 namespace WithClassSQL_02_CRUD
 {
-    partial class FormDuzelt
+    partial class FormHastalar
     {
         /// <summary>
         /// Required designer variable.
@@ -47,11 +47,13 @@ namespace WithClassSQL_02_CRUD
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSil = new System.Windows.Forms.Button();
+            this.btnYeniKayit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHastalar)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvHastalar
             // 
+            this.dgvHastalar.AllowUserToAddRows = false;
             this.dgvHastalar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHastalar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHastalar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -65,9 +67,9 @@ namespace WithClassSQL_02_CRUD
             // 
             // btnKapat
             // 
-            this.btnKapat.Location = new System.Drawing.Point(57, 221);
+            this.btnKapat.Location = new System.Drawing.Point(24, 269);
             this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(75, 23);
+            this.btnKapat.Size = new System.Drawing.Size(92, 44);
             this.btnKapat.TabIndex = 1;
             this.btnKapat.Text = "Kapat";
             this.btnKapat.UseVisualStyleBackColor = true;
@@ -75,9 +77,9 @@ namespace WithClassSQL_02_CRUD
             // 
             // btnDuzelt
             // 
-            this.btnDuzelt.Location = new System.Drawing.Point(176, 221);
+            this.btnDuzelt.Location = new System.Drawing.Point(144, 213);
             this.btnDuzelt.Name = "btnDuzelt";
-            this.btnDuzelt.Size = new System.Drawing.Size(75, 23);
+            this.btnDuzelt.Size = new System.Drawing.Size(92, 44);
             this.btnDuzelt.TabIndex = 2;
             this.btnDuzelt.Text = "Düzelt";
             this.btnDuzelt.UseVisualStyleBackColor = true;
@@ -202,19 +204,30 @@ namespace WithClassSQL_02_CRUD
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(115, 260);
+            this.btnSil.Location = new System.Drawing.Point(144, 270);
             this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(75, 23);
+            this.btnSil.Size = new System.Drawing.Size(92, 44);
             this.btnSil.TabIndex = 9;
             this.btnSil.Text = "Sil";
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
-            // FormDuzelt
+            // btnYeniKayit
+            // 
+            this.btnYeniKayit.Location = new System.Drawing.Point(24, 215);
+            this.btnYeniKayit.Name = "btnYeniKayit";
+            this.btnYeniKayit.Size = new System.Drawing.Size(92, 44);
+            this.btnYeniKayit.TabIndex = 10;
+            this.btnYeniKayit.Text = "Yeni Kayıt";
+            this.btnYeniKayit.UseVisualStyleBackColor = true;
+            this.btnYeniKayit.Click += new System.EventHandler(this.btnYeniKayit_Click);
+            // 
+            // FormHastalar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(670, 334);
+            this.Controls.Add(this.btnYeniKayit);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -233,8 +246,8 @@ namespace WithClassSQL_02_CRUD
             this.Controls.Add(this.btnDuzelt);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.dgvHastalar);
-            this.Name = "FormDuzelt";
-            this.Text = "Duzelt";
+            this.Name = "FormHastalar";
+            this.Text = "Hastalar";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDuzelt_FormClosing);
             this.Load += new System.EventHandler(this.FormDuzelt_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHastalar)).EndInit();
@@ -263,5 +276,6 @@ namespace WithClassSQL_02_CRUD
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnYeniKayit;
     }
 }

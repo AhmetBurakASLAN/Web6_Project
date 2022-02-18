@@ -10,17 +10,21 @@ using System.Windows.Forms;
 
 namespace WithClassSQL_02_CRUD
 {
-    public partial class FormDuzelt : Form
+    public partial class FormHastalar : Form
     {
         VeriTabani vt = new VeriTabani();
-        public FormDuzelt()
+        string sorguCümlesi;
+        public FormHastalar()
         {
             InitializeComponent();
         }
         
         void Doldur()
+
+
         {
-            dgvHastalar.DataSource = vt.HastalariListele();
+            sorguCümlesi = $"SELECT * FROM tblHastalar";
+            dgvHastalar.DataSource = vt.KayitListele(sorguCümlesi);
         }
         private void FormDuzelt_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -50,8 +54,10 @@ namespace WithClassSQL_02_CRUD
         {
             string ID = dgvHastalar.CurrentRow.Cells[0].Value.ToString();
             string cinsiyet = cmbCinsiyet.Text == "Kadın" ? "K" : "E";
-            vt.Düzelt(ID,txtTc.Text,txtAd.Text,txtSoyad.Text,cinsiyet,txtAdres.Text,txtTel.Text,txtMail.Text);
-            
+            sorguCümlesi = $"UPDATE tblHastalar SET  TcNo='{txtTc.Text}',Ad='{txtAd.Text}',Soyad='{txtSoyad.Text}',Cinsiyet='{cinsiyet}',Adres='{txtAdres.Text}',Telefon='{txtTel.Text}' where ID='{ID}'";
+
+            vt.Islem(sorguCümlesi);
+
             Doldur();
             Temizle();
         }
@@ -93,8 +99,18 @@ namespace WithClassSQL_02_CRUD
         private void btnSil_Click(object sender, EventArgs e)
         {
             string ID = dgvHastalar.CurrentRow.Cells[0].Value.ToString();
-            vt.Sil(ID);
+            sorguCümlesi = $"DELETE  FROM  tblHastalar  where ID='{ID}'";
+            vt.Islem(sorguCümlesi);
+            
             Doldur();
+        }
+
+        private void btnYeniKayit_Click(object sender, EventArgs e)
+        {
+            FormYenikayit frmYeni = new FormYenikayit();
+            frmYeni.Show();
+            this.Hide();
+
         }
     }
 }

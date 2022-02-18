@@ -13,6 +13,7 @@ namespace WithClassSQL_02_CRUD
     public partial class FormYenikayit : Form
     {
         VeriTabani vt = new VeriTabani();
+        string sorguCümlesi;
         public FormYenikayit()
         {
             InitializeComponent();
@@ -31,15 +32,18 @@ namespace WithClassSQL_02_CRUD
         }
         private void FormYenikayit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FormAna formAna = new FormAna();
-            formAna.Show();
+            FormHastalar formHastalar = new FormHastalar();
+            formHastalar.Show();
             this.Hide();
         }
         
         private void btnKaydet_Click(object sender, EventArgs e)
         {
             string cinsiyet = cmbCinsiyet.Text == "Kadın" ? "K" : "E";
-            vt.Ekle(txtTC.Text, txtAd.Text, txtSoyad.Text, cinsiyet, txtAdres.Text, txtTel.Text, txtMail.Text);
+            //sorguCümlesi = $"INSERT INTO tblHastalar(TcNo,Ad,Soyad,Cinsiyet) VALUES ('{txtTC.Text}','{txtAd.Text}','{txtSoyad.Text}','{cinsiyet}')"; sadece girdirmek istediklerinde kullanılır
+            sorguCümlesi = $"INSERT INTO tblHastalar VALUES ('{txtTC.Text}','{txtAd.Text}','{txtSoyad.Text}','{cinsiyet}','{txtAdres.Text}','{txtTel.Text}','{txtMail.Text}')";
+
+            vt.Islem(sorguCümlesi);
             Temizle();
         }
 
