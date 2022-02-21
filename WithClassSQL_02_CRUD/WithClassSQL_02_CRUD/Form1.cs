@@ -38,7 +38,8 @@ namespace WithClassSQL_02_CRUD
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
-           Application.Exit();
+           sy
+           //Application.Exit();
         }
 
         private void btnHastalar_Click(object sender, EventArgs e)
@@ -53,6 +54,13 @@ namespace WithClassSQL_02_CRUD
         {
             FormBolumler formbolumler = new FormBolumler();
             formbolumler.Show();
+            this.Hide();
+        }
+
+        private void btnRandevu_Click(object sender, EventArgs e)
+        {
+            FormRandevu formrandevu = new FormRandevu();
+            formrandevu.Show();
             this.Hide();
         }
     }

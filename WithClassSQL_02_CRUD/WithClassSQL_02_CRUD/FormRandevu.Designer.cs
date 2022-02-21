@@ -72,6 +72,7 @@ namespace WithClassSQL_02_CRUD
             this.txtArananHasta.Name = "txtArananHasta";
             this.txtArananHasta.Size = new System.Drawing.Size(202, 20);
             this.txtArananHasta.TabIndex = 3;
+            this.txtArananHasta.TextChanged += new System.EventHandler(this.txtArananHasta_TextChanged);
             // 
             // label2
             // 
@@ -171,6 +172,7 @@ namespace WithClassSQL_02_CRUD
             this.Controls.Add(this.dgwHastalar);
             this.Name = "FormRandevu";
             this.Text = "Randevu Oluşturma";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormRandevu_FormClosing);
             this.Load += new System.EventHandler(this.FormRandevu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgwHastalar)).EndInit();
             this.ResumeLayout(false);

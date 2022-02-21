@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D5B3D065-43CF-44AD-B977-66CE245EE8DB}</ProjectGuid>
+    <ProjectGuid>{D67077DF-6CCB-4A4F-9820-DA622C437A7F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WithClassSQL_02_CRUD</RootNamespace>
-    <AssemblyName>WithClassSQL_02_CRUD</AssemblyName>
+    <RootNamespace>OOP_01</RootNamespace>
+    <AssemblyName>OOP_01</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,72 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Doktorlar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Doktorlar.Designer.cs">
-      <DependentUpon>Doktorlar.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormBolumler.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormBolumler.Designer.cs">
-      <DependentUpon>FormBolumler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormHastalar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormHastalar.Designer.cs">
-      <DependentUpon>FormHastalar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormOnay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormOnay.Designer.cs">
-      <DependentUpon>FormOnay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormRandevu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormRandevu.Designer.cs">
-      <DependentUpon>FormRandevu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormYenikayit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormYenikayit.Designer.cs">
-      <DependentUpon>FormYenikayit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlConnetction.cs" />
-    <Compile Include="VeriTabani.cs" />
-    <EmbeddedResource Include="Doktorlar.resx">
-      <DependentUpon>Doktorlar.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormBolumler.resx">
-      <DependentUpon>FormBolumler.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormHastalar.resx">
-      <DependentUpon>FormHastalar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormOnay.resx">
-      <DependentUpon>FormOnay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormRandevu.resx">
-      <DependentUpon>FormRandevu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormYenikayit.resx">
-      <DependentUpon>FormYenikayit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

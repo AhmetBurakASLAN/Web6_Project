@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WithClassSQL_02_CRUD
+namespace OOP_01
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace WithClassSQL_02_CRUD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormAna());
+            Application.Run(new Form1());
         }
     }
 }

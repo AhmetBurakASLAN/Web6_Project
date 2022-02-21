@@ -32,6 +32,7 @@ namespace WithClassSQL_02_CRUD
             this.btnHastalar = new System.Windows.Forms.Button();
             this.btnKapat = new System.Windows.Forms.Button();
             this.btnBolumler = new System.Windows.Forms.Button();
+            this.btnRandevu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnHastalar
@@ -64,11 +65,22 @@ namespace WithClassSQL_02_CRUD
             this.btnBolumler.UseVisualStyleBackColor = true;
             this.btnBolumler.Click += new System.EventHandler(this.btnBolumler_Click);
             // 
+            // btnRandevu
+            // 
+            this.btnRandevu.Location = new System.Drawing.Point(113, 159);
+            this.btnRandevu.Name = "btnRandevu";
+            this.btnRandevu.Size = new System.Drawing.Size(95, 39);
+            this.btnRandevu.TabIndex = 5;
+            this.btnRandevu.Text = "Randevu";
+            this.btnRandevu.UseVisualStyleBackColor = true;
+            this.btnRandevu.Click += new System.EventHandler(this.btnRandevu_Click);
+            // 
             // FormAna
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(307, 325);
+            this.Controls.Add(this.btnRandevu);
             this.Controls.Add(this.btnBolumler);
             this.Controls.Add(this.btnKapat);
             this.Controls.Add(this.btnHastalar);
@@ -83,6 +95,7 @@ namespace WithClassSQL_02_CRUD
         private System.Windows.Forms.Button btnHastalar;
         private System.Windows.Forms.Button btnKapat;
         private System.Windows.Forms.Button btnBolumler;
+        private System.Windows.Forms.Button btnRandevu;
     }
 }
 
