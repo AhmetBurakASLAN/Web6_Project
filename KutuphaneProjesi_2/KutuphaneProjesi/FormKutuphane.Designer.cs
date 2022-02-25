@@ -37,16 +37,16 @@ namespace KutuphaneProjesi
             this.label5 = new System.Windows.Forms.Label();
             this.dtpTeslimEdilmesiGerekenTarih = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgvVeriisTarihi = new System.Windows.Forms.DateTimePicker();
+            this.dtpVerilisTarihi = new System.Windows.Forms.DateTimePicker();
             this.pnlTeslimTarihi = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
-            this.dgvTeslimTarihi = new System.Windows.Forms.DateTimePicker();
+            this.dtpTeslimTarihi = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.txtKitapü = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvOKitap = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.txtUye = new System.Windows.Forms.TextBox();
-            this.dgvUye = new System.Windows.Forms.DataGridView();
+            this.dgvOUye = new System.Windows.Forms.DataGridView();
             this.lblID = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvOdunc = new System.Windows.Forms.DataGridView();
@@ -139,11 +139,12 @@ namespace KutuphaneProjesi
             this.label41 = new System.Windows.Forms.Label();
             this.txtKitapTürAd = new System.Windows.Forms.TextBox();
             this.dgvKitapTurleri = new System.Windows.Forms.DataGridView();
+            this.label36 = new System.Windows.Forms.Label();
             this.tabMain.SuspendLayout();
             this.tabOdunc.SuspendLayout();
             this.pnlTeslimTarihi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOKitap)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOUye)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdunc)).BeginInit();
             this.tabKitaplar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKitaplar)).BeginInit();
@@ -174,20 +175,21 @@ namespace KutuphaneProjesi
             // 
             // tabOdunc
             // 
+            this.tabOdunc.Controls.Add(this.label36);
             this.tabOdunc.Controls.Add(this.btnIptal);
             this.tabOdunc.Controls.Add(this.btnOduncVer);
             this.tabOdunc.Controls.Add(this.btnTeslimAl);
             this.tabOdunc.Controls.Add(this.label5);
             this.tabOdunc.Controls.Add(this.dtpTeslimEdilmesiGerekenTarih);
             this.tabOdunc.Controls.Add(this.label6);
-            this.tabOdunc.Controls.Add(this.dgvVeriisTarihi);
+            this.tabOdunc.Controls.Add(this.dtpVerilisTarihi);
             this.tabOdunc.Controls.Add(this.pnlTeslimTarihi);
             this.tabOdunc.Controls.Add(this.label4);
             this.tabOdunc.Controls.Add(this.txtKitapü);
-            this.tabOdunc.Controls.Add(this.dataGridView1);
+            this.tabOdunc.Controls.Add(this.dgvOKitap);
             this.tabOdunc.Controls.Add(this.label3);
             this.tabOdunc.Controls.Add(this.txtUye);
-            this.tabOdunc.Controls.Add(this.dgvUye);
+            this.tabOdunc.Controls.Add(this.dgvOUye);
             this.tabOdunc.Controls.Add(this.lblID);
             this.tabOdunc.Controls.Add(this.label2);
             this.tabOdunc.Controls.Add(this.dgvOdunc);
@@ -198,7 +200,6 @@ namespace KutuphaneProjesi
             this.tabOdunc.TabIndex = 0;
             this.tabOdunc.Text = "Ödünç İşlemleri";
             this.tabOdunc.UseVisualStyleBackColor = true;
-            this.tabOdunc.Click += new System.EventHandler(this.tabOdunc_Click);
             // 
             // btnIptal
             // 
@@ -208,6 +209,7 @@ namespace KutuphaneProjesi
             this.btnIptal.TabIndex = 22;
             this.btnIptal.Text = "İptal Et";
             this.btnIptal.UseVisualStyleBackColor = true;
+            this.btnIptal.Click += new System.EventHandler(this.btnIptal_Click);
             // 
             // btnOduncVer
             // 
@@ -217,6 +219,7 @@ namespace KutuphaneProjesi
             this.btnOduncVer.TabIndex = 21;
             this.btnOduncVer.Text = "Ödünç Ver";
             this.btnOduncVer.UseVisualStyleBackColor = true;
+            this.btnOduncVer.Click += new System.EventHandler(this.btnOduncVer_Click);
             // 
             // btnTeslimAl
             // 
@@ -252,17 +255,17 @@ namespace KutuphaneProjesi
             this.label6.TabIndex = 17;
             this.label6.Text = "Veriliş Tarihi";
             // 
-            // dgvVeriisTarihi
+            // dtpVerilisTarihi
             // 
-            this.dgvVeriisTarihi.Location = new System.Drawing.Point(357, 174);
-            this.dgvVeriisTarihi.Name = "dgvVeriisTarihi";
-            this.dgvVeriisTarihi.Size = new System.Drawing.Size(200, 20);
-            this.dgvVeriisTarihi.TabIndex = 16;
+            this.dtpVerilisTarihi.Location = new System.Drawing.Point(357, 174);
+            this.dtpVerilisTarihi.Name = "dtpVerilisTarihi";
+            this.dtpVerilisTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpVerilisTarihi.TabIndex = 16;
             // 
             // pnlTeslimTarihi
             // 
             this.pnlTeslimTarihi.Controls.Add(this.label7);
-            this.pnlTeslimTarihi.Controls.Add(this.dgvTeslimTarihi);
+            this.pnlTeslimTarihi.Controls.Add(this.dtpTeslimTarihi);
             this.pnlTeslimTarihi.Location = new System.Drawing.Point(347, 269);
             this.pnlTeslimTarihi.Name = "pnlTeslimTarihi";
             this.pnlTeslimTarihi.Size = new System.Drawing.Size(221, 72);
@@ -277,12 +280,12 @@ namespace KutuphaneProjesi
             this.label7.TabIndex = 14;
             this.label7.Text = "Teslim Tarihi";
             // 
-            // dgvTeslimTarihi
+            // dtpTeslimTarihi
             // 
-            this.dgvTeslimTarihi.Location = new System.Drawing.Point(10, 26);
-            this.dgvTeslimTarihi.Name = "dgvTeslimTarihi";
-            this.dgvTeslimTarihi.Size = new System.Drawing.Size(200, 20);
-            this.dgvTeslimTarihi.TabIndex = 10;
+            this.dtpTeslimTarihi.Location = new System.Drawing.Point(10, 26);
+            this.dtpTeslimTarihi.Name = "dtpTeslimTarihi";
+            this.dtpTeslimTarihi.Size = new System.Drawing.Size(200, 20);
+            this.dtpTeslimTarihi.TabIndex = 10;
             // 
             // label4
             // 
@@ -300,18 +303,19 @@ namespace KutuphaneProjesi
             this.txtKitapü.Size = new System.Drawing.Size(87, 20);
             this.txtKitapü.TabIndex = 8;
             // 
-            // dataGridView1
+            // dgvOKitap
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(183, 200);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(120, 141);
-            this.dataGridView1.TabIndex = 7;
+            this.dgvOKitap.AllowUserToAddRows = false;
+            this.dgvOKitap.AllowUserToDeleteRows = false;
+            this.dgvOKitap.AllowUserToResizeColumns = false;
+            this.dgvOKitap.AllowUserToResizeRows = false;
+            this.dgvOKitap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOKitap.Location = new System.Drawing.Point(183, 200);
+            this.dgvOKitap.MultiSelect = false;
+            this.dgvOKitap.Name = "dgvOKitap";
+            this.dgvOKitap.ReadOnly = true;
+            this.dgvOKitap.Size = new System.Drawing.Size(120, 141);
+            this.dgvOKitap.TabIndex = 7;
             // 
             // label3
             // 
@@ -329,18 +333,19 @@ namespace KutuphaneProjesi
             this.txtUye.Size = new System.Drawing.Size(100, 20);
             this.txtUye.TabIndex = 5;
             // 
-            // dgvUye
+            // dgvOUye
             // 
-            this.dgvUye.AllowUserToAddRows = false;
-            this.dgvUye.AllowUserToDeleteRows = false;
-            this.dgvUye.AllowUserToResizeColumns = false;
-            this.dgvUye.AllowUserToResizeRows = false;
-            this.dgvUye.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUye.Location = new System.Drawing.Point(14, 200);
-            this.dgvUye.Name = "dgvUye";
-            this.dgvUye.ReadOnly = true;
-            this.dgvUye.Size = new System.Drawing.Size(129, 143);
-            this.dgvUye.TabIndex = 4;
+            this.dgvOUye.AllowUserToAddRows = false;
+            this.dgvOUye.AllowUserToDeleteRows = false;
+            this.dgvOUye.AllowUserToResizeColumns = false;
+            this.dgvOUye.AllowUserToResizeRows = false;
+            this.dgvOUye.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOUye.Location = new System.Drawing.Point(14, 200);
+            this.dgvOUye.MultiSelect = false;
+            this.dgvOUye.Name = "dgvOUye";
+            this.dgvOUye.ReadOnly = true;
+            this.dgvOUye.Size = new System.Drawing.Size(129, 143);
+            this.dgvOUye.TabIndex = 4;
             // 
             // lblID
             // 
@@ -369,11 +374,14 @@ namespace KutuphaneProjesi
             this.dgvOdunc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOdunc.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgvOdunc.Location = new System.Drawing.Point(3, 3);
+            this.dgvOdunc.MultiSelect = false;
             this.dgvOdunc.Name = "dgvOdunc";
             this.dgvOdunc.ReadOnly = true;
             this.dgvOdunc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvOdunc.Size = new System.Drawing.Size(620, 143);
             this.dgvOdunc.TabIndex = 0;
+            this.dgvOdunc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdunc_CellContentClick);
+            this.dgvOdunc.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOdunc_CellEnter);
             // 
             // tabKitaplar
             // 
@@ -411,7 +419,6 @@ namespace KutuphaneProjesi
             this.btnYeni.TabIndex = 13;
             this.btnYeni.Text = "Yeni Kitap";
             this.btnYeni.UseVisualStyleBackColor = true;
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
             // 
             // btnGuncelle
             // 
@@ -1055,7 +1062,6 @@ namespace KutuphaneProjesi
             this.btnYayinKaydet.TabIndex = 48;
             this.btnYayinKaydet.Text = "Kaydet";
             this.btnYayinKaydet.UseVisualStyleBackColor = true;
-            this.btnYayinKaydet.Click += new System.EventHandler(this.btnYayinKaydet_Click);
             // 
             // btnYayinSil
             // 
@@ -1182,7 +1188,6 @@ namespace KutuphaneProjesi
             this.btnKitapTürKaydet.TabIndex = 54;
             this.btnKitapTürKaydet.Text = "Kaydet";
             this.btnKitapTürKaydet.UseVisualStyleBackColor = true;
-            this.btnKitapTürKaydet.Click += new System.EventHandler(this.btnKitapTürKaydet_Click);
             // 
             // btnKitapTürSil
             // 
@@ -1251,6 +1256,15 @@ namespace KutuphaneProjesi
             this.dgvKitapTurleri.Size = new System.Drawing.Size(620, 143);
             this.dgvKitapTurleri.TabIndex = 5;
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(166, 157);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(41, 13);
+            this.label36.TabIndex = 23;
+            this.label36.Text = "label36";
+            // 
             // FormKutuphane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1265,8 +1279,8 @@ namespace KutuphaneProjesi
             this.tabOdunc.PerformLayout();
             this.pnlTeslimTarihi.ResumeLayout(false);
             this.pnlTeslimTarihi.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOKitap)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOUye)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOdunc)).EndInit();
             this.tabKitaplar.ResumeLayout(false);
             this.tabKitaplar.PerformLayout();
@@ -1298,17 +1312,17 @@ namespace KutuphaneProjesi
         private System.Windows.Forms.TabPage tabTur;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtKitapü;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvOKitap;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUye;
-        private System.Windows.Forms.DataGridView dgvUye;
+        private System.Windows.Forms.DataGridView dgvOUye;
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvOdunc;
-        private System.Windows.Forms.DateTimePicker dgvTeslimTarihi;
+        private System.Windows.Forms.DateTimePicker dtpTeslimTarihi;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dgvVeriisTarihi;
+        private System.Windows.Forms.DateTimePicker dtpVerilisTarihi;
         private System.Windows.Forms.Panel pnlTeslimTarihi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpTeslimEdilmesiGerekenTarih;
@@ -1399,6 +1413,7 @@ namespace KutuphaneProjesi
         private System.Windows.Forms.Button btnKitapTürKaydet;
         private System.Windows.Forms.Button btnKitapTürSil;
         private System.Windows.Forms.Button btnKitapTürGüncelle;
+        private System.Windows.Forms.Label label36;
     }
 }
 
