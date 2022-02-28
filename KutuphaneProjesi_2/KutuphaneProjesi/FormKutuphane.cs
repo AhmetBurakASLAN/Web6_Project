@@ -53,7 +53,7 @@ namespace KutuphaneProjesi
            dgvOKitap.Columns[1].Visible = true;
             dgvOKitap.Columns[0].Visible = true;
 
-            //Aktar();
+            Aktar();
         }
         void OduncRefresh()
         {
