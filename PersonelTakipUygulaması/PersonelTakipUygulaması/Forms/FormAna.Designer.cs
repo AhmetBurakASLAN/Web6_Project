@@ -57,6 +57,7 @@ namespace PersonelTakipUygulaması
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.dgvCalisanlar = new System.Windows.Forms.DataGridView();
+            this.cbxBenzer = new System.Windows.Forms.CheckBox();
             this.pnlAraclar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalisanlar)).BeginInit();
@@ -102,10 +103,14 @@ namespace PersonelTakipUygulaması
             // cmbDurumu
             // 
             this.cmbDurumu.FormattingEnabled = true;
+            this.cmbDurumu.Items.AddRange(new object[] {
+            "aktif",
+            "pasif"});
             this.cmbDurumu.Location = new System.Drawing.Point(125, 262);
             this.cmbDurumu.Name = "cmbDurumu";
             this.cmbDurumu.Size = new System.Drawing.Size(170, 21);
-            this.cmbDurumu.TabIndex = 3;
+            this.cmbDurumu.TabIndex = 8;
+            this.cmbDurumu.Tag = "Durumu";
             // 
             // label8
             // 
@@ -121,10 +126,16 @@ namespace PersonelTakipUygulaması
             // cmbUnvan
             // 
             this.cmbUnvan.FormattingEnabled = true;
+            this.cmbUnvan.Items.AddRange(new object[] {
+            "işçi",
+            "ekip lideri",
+            "yönetici yardımcısı",
+            "yönetici"});
             this.cmbUnvan.Location = new System.Drawing.Point(125, 232);
             this.cmbUnvan.Name = "cmbUnvan";
             this.cmbUnvan.Size = new System.Drawing.Size(170, 21);
-            this.cmbUnvan.TabIndex = 3;
+            this.cmbUnvan.TabIndex = 7;
+            this.cmbUnvan.Tag = "Unvan";
             // 
             // label7
             // 
@@ -140,38 +151,53 @@ namespace PersonelTakipUygulaması
             // cmbDepartman
             // 
             this.cmbDepartman.FormattingEnabled = true;
+            this.cmbDepartman.Items.AddRange(new object[] {
+            "İnsan Kaynakları",
+            "Muhasebe",
+            "Satış",
+            "Üretim",
+            "Teknik"});
             this.cmbDepartman.Location = new System.Drawing.Point(125, 207);
             this.cmbDepartman.Name = "cmbDepartman";
             this.cmbDepartman.Size = new System.Drawing.Size(170, 21);
-            this.cmbDepartman.TabIndex = 3;
+            this.cmbDepartman.TabIndex = 6;
+            this.cmbDepartman.Tag = "Departman";
             // 
             // dtpIseBaslamaTarihi
             // 
             this.dtpIseBaslamaTarihi.Location = new System.Drawing.Point(125, 181);
             this.dtpIseBaslamaTarihi.Name = "dtpIseBaslamaTarihi";
             this.dtpIseBaslamaTarihi.Size = new System.Drawing.Size(170, 20);
-            this.dtpIseBaslamaTarihi.TabIndex = 2;
+            this.dtpIseBaslamaTarihi.TabIndex = 5;
+            this.dtpIseBaslamaTarihi.Tag = "IseBaslamaTarihi";
+            this.dtpIseBaslamaTarihi.ValueChanged += new System.EventHandler(this.dtpIseBaslamaTarihi_ValueChanged);
             // 
             // dtpDogumTarihi
             // 
             this.dtpDogumTarihi.Location = new System.Drawing.Point(125, 152);
             this.dtpDogumTarihi.Name = "dtpDogumTarihi";
             this.dtpDogumTarihi.Size = new System.Drawing.Size(170, 20);
-            this.dtpDogumTarihi.TabIndex = 2;
+            this.dtpDogumTarihi.TabIndex = 4;
+            this.dtpDogumTarihi.Tag = "DogumTarihi";
+            this.dtpDogumTarihi.ValueChanged += new System.EventHandler(this.dtpDogumTarihi_ValueChanged);
             // 
             // txtPersonelNo
             // 
             this.txtPersonelNo.Location = new System.Drawing.Point(125, 123);
+            this.txtPersonelNo.MaxLength = 5;
             this.txtPersonelNo.Name = "txtPersonelNo";
             this.txtPersonelNo.Size = new System.Drawing.Size(170, 20);
-            this.txtPersonelNo.TabIndex = 1;
+            this.txtPersonelNo.TabIndex = 3;
+            this.txtPersonelNo.Tag = "PersonelNo";
             // 
             // txtTcNo
             // 
             this.txtTcNo.Location = new System.Drawing.Point(125, 93);
+            this.txtTcNo.MaxLength = 11;
             this.txtTcNo.Name = "txtTcNo";
             this.txtTcNo.Size = new System.Drawing.Size(170, 20);
-            this.txtTcNo.TabIndex = 1;
+            this.txtTcNo.TabIndex = 2;
+            this.txtTcNo.Tag = "TcNo";
             // 
             // txtSoyad
             // 
@@ -179,13 +205,15 @@ namespace PersonelTakipUygulaması
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.Size = new System.Drawing.Size(170, 20);
             this.txtSoyad.TabIndex = 1;
+            this.txtSoyad.Tag = "Soyad";
             // 
             // txtAd
             // 
             this.txtAd.Location = new System.Drawing.Point(125, 27);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(170, 20);
-            this.txtAd.TabIndex = 1;
+            this.txtAd.TabIndex = 0;
+            this.txtAd.Tag = "Ad";
             // 
             // label6
             // 
@@ -256,6 +284,7 @@ namespace PersonelTakipUygulaması
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel2.Controls.Add(this.cbxBenzer);
             this.panel2.Controls.Add(this.btnSil);
             this.panel2.Controls.Add(this.btnTemizle);
             this.panel2.Controls.Add(this.btnHepsiniSil);
@@ -265,70 +294,74 @@ namespace PersonelTakipUygulaması
             this.panel2.Controls.Add(this.btnGuncelle);
             this.panel2.Location = new System.Drawing.Point(6, 326);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(304, 112);
+            this.panel2.Size = new System.Drawing.Size(304, 123);
             this.panel2.TabIndex = 1;
             // 
             // btnSil
             // 
-            this.btnSil.Location = new System.Drawing.Point(9, 52);
+            this.btnSil.Location = new System.Drawing.Point(9, 44);
             this.btnSil.Name = "btnSil";
             this.btnSil.Size = new System.Drawing.Size(84, 23);
-            this.btnSil.TabIndex = 7;
+            this.btnSil.TabIndex = 11;
             this.btnSil.Text = "SİL";
             this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnTemizle
             // 
-            this.btnTemizle.Location = new System.Drawing.Point(113, 52);
+            this.btnTemizle.Location = new System.Drawing.Point(113, 44);
             this.btnTemizle.Name = "btnTemizle";
             this.btnTemizle.Size = new System.Drawing.Size(84, 23);
-            this.btnTemizle.TabIndex = 6;
+            this.btnTemizle.TabIndex = 12;
             this.btnTemizle.Text = "TEMİZLE";
             this.btnTemizle.UseVisualStyleBackColor = true;
             this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // btnHepsiniSil
             // 
-            this.btnHepsiniSil.Location = new System.Drawing.Point(211, 52);
+            this.btnHepsiniSil.Location = new System.Drawing.Point(211, 44);
             this.btnHepsiniSil.Name = "btnHepsiniSil";
             this.btnHepsiniSil.Size = new System.Drawing.Size(84, 23);
-            this.btnHepsiniSil.TabIndex = 5;
+            this.btnHepsiniSil.TabIndex = 13;
             this.btnHepsiniSil.Text = "HEPSİNİ SİL";
             this.btnHepsiniSil.UseVisualStyleBackColor = true;
+            this.btnHepsiniSil.Click += new System.EventHandler(this.btnHepsiniSil_Click);
             // 
             // btnGetir
             // 
-            this.btnGetir.Location = new System.Drawing.Point(9, 81);
+            this.btnGetir.Location = new System.Drawing.Point(9, 73);
             this.btnGetir.Name = "btnGetir";
             this.btnGetir.Size = new System.Drawing.Size(137, 23);
-            this.btnGetir.TabIndex = 2;
+            this.btnGetir.TabIndex = 14;
             this.btnGetir.Text = "GETİR";
             this.btnGetir.UseVisualStyleBackColor = true;
             // 
             // btnBul
             // 
-            this.btnBul.Location = new System.Drawing.Point(158, 81);
+            this.btnBul.Location = new System.Drawing.Point(158, 73);
             this.btnBul.Name = "btnBul";
             this.btnBul.Size = new System.Drawing.Size(137, 23);
-            this.btnBul.TabIndex = 1;
+            this.btnBul.TabIndex = 15;
             this.btnBul.Text = "BUL";
             this.btnBul.UseVisualStyleBackColor = true;
+            this.btnBul.Click += new System.EventHandler(this.btnBul_Click);
             // 
             // btnKaydet
             // 
-            this.btnKaydet.Location = new System.Drawing.Point(9, 18);
+            this.btnKaydet.Location = new System.Drawing.Point(9, 10);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(137, 23);
-            this.btnKaydet.TabIndex = 2;
+            this.btnKaydet.TabIndex = 9;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnGuncelle
             // 
-            this.btnGuncelle.Location = new System.Drawing.Point(158, 18);
+            this.btnGuncelle.Location = new System.Drawing.Point(158, 10);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(137, 23);
-            this.btnGuncelle.TabIndex = 1;
+            this.btnGuncelle.TabIndex = 10;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = true;
             // 
@@ -340,8 +373,22 @@ namespace PersonelTakipUygulaması
             this.dgvCalisanlar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCalisanlar.Location = new System.Drawing.Point(316, 12);
             this.dgvCalisanlar.Name = "dgvCalisanlar";
+            this.dgvCalisanlar.ReadOnly = true;
+            this.dgvCalisanlar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCalisanlar.Size = new System.Drawing.Size(633, 426);
             this.dgvCalisanlar.TabIndex = 2;
+            this.dgvCalisanlar.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalisanlar_CellEnter);
+            this.dgvCalisanlar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvCalisanlar_KeyPress);
+            // 
+            // cbxBenzer
+            // 
+            this.cbxBenzer.AutoSize = true;
+            this.cbxBenzer.Location = new System.Drawing.Point(197, 102);
+            this.cbxBenzer.Name = "cbxBenzer";
+            this.cbxBenzer.Size = new System.Drawing.Size(98, 17);
+            this.cbxBenzer.TabIndex = 16;
+            this.cbxBenzer.Text = "Benzerlerini Bul";
+            this.cbxBenzer.UseVisualStyleBackColor = true;
             // 
             // FormAna
             // 
@@ -358,6 +405,7 @@ namespace PersonelTakipUygulaması
             this.pnlAraclar.ResumeLayout(false);
             this.pnlAraclar.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalisanlar)).EndInit();
             this.ResumeLayout(false);
 
@@ -393,6 +441,7 @@ namespace PersonelTakipUygulaması
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.DataGridView dgvCalisanlar;
+        private System.Windows.Forms.CheckBox cbxBenzer;
     }
 }
 
