@@ -49,6 +49,9 @@ namespace PersonelTakipUygulaması
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.rdbTamEslesme = new System.Windows.Forms.RadioButton();
+            this.rdbBenzer = new System.Windows.Forms.RadioButton();
+            this.rdbBasla = new System.Windows.Forms.RadioButton();
             this.btnSil = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.btnHepsiniSil = new System.Windows.Forms.Button();
@@ -57,7 +60,6 @@ namespace PersonelTakipUygulaması
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnGuncelle = new System.Windows.Forms.Button();
             this.dgvCalisanlar = new System.Windows.Forms.DataGridView();
-            this.cbxBenzer = new System.Windows.Forms.CheckBox();
             this.pnlAraclar.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalisanlar)).BeginInit();
@@ -284,7 +286,9 @@ namespace PersonelTakipUygulaması
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.cbxBenzer);
+            this.panel2.Controls.Add(this.rdbTamEslesme);
+            this.panel2.Controls.Add(this.rdbBenzer);
+            this.panel2.Controls.Add(this.rdbBasla);
             this.panel2.Controls.Add(this.btnSil);
             this.panel2.Controls.Add(this.btnTemizle);
             this.panel2.Controls.Add(this.btnHepsiniSil);
@@ -296,6 +300,38 @@ namespace PersonelTakipUygulaması
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(304, 123);
             this.panel2.TabIndex = 1;
+            // 
+            // rdbTamEslesme
+            // 
+            this.rdbTamEslesme.AutoSize = true;
+            this.rdbTamEslesme.Checked = true;
+            this.rdbTamEslesme.Location = new System.Drawing.Point(211, 102);
+            this.rdbTamEslesme.Name = "rdbTamEslesme";
+            this.rdbTamEslesme.Size = new System.Drawing.Size(88, 17);
+            this.rdbTamEslesme.TabIndex = 18;
+            this.rdbTamEslesme.TabStop = true;
+            this.rdbTamEslesme.Text = "Tam Eşleşme";
+            this.rdbTamEslesme.UseVisualStyleBackColor = true;
+            // 
+            // rdbBenzer
+            // 
+            this.rdbBenzer.AutoSize = true;
+            this.rdbBenzer.Location = new System.Drawing.Point(128, 103);
+            this.rdbBenzer.Name = "rdbBenzer";
+            this.rdbBenzer.Size = new System.Drawing.Size(58, 17);
+            this.rdbBenzer.TabIndex = 17;
+            this.rdbBenzer.Text = "Benzer";
+            this.rdbBenzer.UseVisualStyleBackColor = true;
+            // 
+            // rdbBasla
+            // 
+            this.rdbBasla.AutoSize = true;
+            this.rdbBasla.Location = new System.Drawing.Point(37, 103);
+            this.rdbBasla.Name = "rdbBasla";
+            this.rdbBasla.Size = new System.Drawing.Size(51, 17);
+            this.rdbBasla.TabIndex = 16;
+            this.rdbBasla.Text = "Basla";
+            this.rdbBasla.UseVisualStyleBackColor = true;
             // 
             // btnSil
             // 
@@ -335,6 +371,7 @@ namespace PersonelTakipUygulaması
             this.btnGetir.TabIndex = 14;
             this.btnGetir.Text = "GETİR";
             this.btnGetir.UseVisualStyleBackColor = true;
+            this.btnGetir.Click += new System.EventHandler(this.btnGetir_Click);
             // 
             // btnBul
             // 
@@ -364,6 +401,7 @@ namespace PersonelTakipUygulaması
             this.btnGuncelle.TabIndex = 10;
             this.btnGuncelle.Text = "GÜNCELLE";
             this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // dgvCalisanlar
             // 
@@ -379,16 +417,6 @@ namespace PersonelTakipUygulaması
             this.dgvCalisanlar.TabIndex = 2;
             this.dgvCalisanlar.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalisanlar_CellEnter);
             this.dgvCalisanlar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgvCalisanlar_KeyPress);
-            // 
-            // cbxBenzer
-            // 
-            this.cbxBenzer.AutoSize = true;
-            this.cbxBenzer.Location = new System.Drawing.Point(197, 102);
-            this.cbxBenzer.Name = "cbxBenzer";
-            this.cbxBenzer.Size = new System.Drawing.Size(98, 17);
-            this.cbxBenzer.TabIndex = 16;
-            this.cbxBenzer.Text = "Benzerlerini Bul";
-            this.cbxBenzer.UseVisualStyleBackColor = true;
             // 
             // FormAna
             // 
@@ -441,7 +469,9 @@ namespace PersonelTakipUygulaması
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnGuncelle;
         private System.Windows.Forms.DataGridView dgvCalisanlar;
-        private System.Windows.Forms.CheckBox cbxBenzer;
+        private System.Windows.Forms.RadioButton rdbTamEslesme;
+        private System.Windows.Forms.RadioButton rdbBenzer;
+        private System.Windows.Forms.RadioButton rdbBasla;
     }
 }
 
