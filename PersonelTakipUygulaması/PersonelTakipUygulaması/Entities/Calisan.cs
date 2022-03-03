@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace PersonelTakipUygulaması.Entities
 {
-    class Calisan
+    class Calisan:IBasicEntity
     {
         // Bu class b,z,m etities katmanımızdadır.
         //Tablolarımızdan tblCalisanlar'ait bir entiti için hazırlanmıştır.
-        public int ID { get; set; }
-        public String Ad { get; set; }
+        
+       
         public string Soyad { get; set; }
         public string TcNo { get; set; }
         public string PersonelNo { get; set; }
@@ -20,6 +20,7 @@ namespace PersonelTakipUygulaması.Entities
         public string Departman { get; set; }
         public string Unvan { get; set; }
         public string Durumu { get; set; }
-
+        public int ID { get; set ; }
+        public string Ad { get ; set ; }
     }
 }

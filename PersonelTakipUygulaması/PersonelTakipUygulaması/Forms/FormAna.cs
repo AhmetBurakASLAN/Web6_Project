@@ -132,8 +132,8 @@ namespace PersonelTakipUygulaması
                      PersonelNo = txtPersonelNo.Text,
                     DogumTarihi = dtpDogumTarihi.Value,
                     IseBaslamaTarihi = dtpIseBaslamaTarihi.Value,
-                    Unvan = cmbUnvan.SelectedItem.ToString(),
-                  Departman = cmbDepartman.SelectedItem.ToString(),
+                    Unvan ="1",             //cmbUnvan.SelectedItem.ToString(),
+                  Departman ="1",           //cmbDepartman.SelectedItem.ToString(),
                    Durumu = cmbDurumu.SelectedItem.ToString()
                 };
                 bool result = Convert.ToBoolean(calisanDal.Insert(calisan));
@@ -284,9 +284,9 @@ namespace PersonelTakipUygulaması
                 dtpDogumTarihi.Value = calisan.DogumTarihi;
                 dtpIseBaslamaTarihi.Format = DateTimePickerFormat.Long;
                 dtpIseBaslamaTarihi.Value = calisan.IseBaslamaTarihi;
-                cmbDepartman.Text = calisan.Departman;
+                cmbDepartman.Text = calisan.Departman.ToString();
                 cmbDurumu.Text = calisan.Durumu;
-                cmbUnvan.Text = calisan.Unvan;
+                cmbUnvan.Text = calisan.Unvan.ToString();
                 
 
             }
@@ -315,8 +315,8 @@ namespace PersonelTakipUygulaması
                     PersonelNo = txtPersonelNo.Text,
                     DogumTarihi = dtpDogumTarihi.Value,
                     IseBaslamaTarihi = dtpIseBaslamaTarihi.Value,
-                    Unvan = cmbUnvan.SelectedItem.ToString(),
-                    Departman = cmbDepartman.SelectedItem.ToString(),
+                    Unvan = "1",
+                    Departman = "1",
                     Durumu = cmbDurumu.SelectedItem.ToString()
                 };
 

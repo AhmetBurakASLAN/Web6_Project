@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E2EA7F23-C766-4A24-971D-A4CDAF902197}</ProjectGuid>
+    <ProjectGuid>{5DF12148-59D5-497C-ADC5-7E3C4AE7C16E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PersonelTakipUygulaması</RootNamespace>
-    <AssemblyName>PersonelTakipUygulaması</AssemblyName>
+    <RootNamespace>KursProjesi</RootNamespace>
+    <AssemblyName>KursProjesi</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,22 +47,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess\CalisanDAL.cs" />
-    <Compile Include="Entities\Calisan.cs" />
-    <Compile Include="Entities\Departman.cs" />
-    <Compile Include="Entities\IBasicEntity.cs" />
-    <Compile Include="Entities\Unvan.cs" />
-    <Compile Include="Forms\FormAna.cs">
+    <Compile Include="DataAccess\BaglantiDAL\Baglanti.cs" />
+    <Compile Include="DataAccess\EgitimDAL.cs" />
+    <Compile Include="Entity\Kurs.cs" />
+    <Compile Include="Presentation\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormAna.Designer.cs">
-      <DependentUpon>FormAna.cs</DependentUpon>
+    <Compile Include="Presentation\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tools\SQLBaglanti.cs" />
-    <EmbeddedResource Include="Forms\FormAna.resx">
-      <DependentUpon>FormAna.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -85,6 +82,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Business\" />
+    <Folder Include="DataAccess\DAL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

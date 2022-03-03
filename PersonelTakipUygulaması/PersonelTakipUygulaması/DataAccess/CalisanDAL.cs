@@ -28,7 +28,7 @@ namespace PersonelTakipUygulaması.DataAccess
             try
             {
                 // Buraya yazacağımız işlemleri dene sorun yoksa çalıştır.
-                using ( SqlCommand command = new SqlCommand($"SELECT * FROM tblCalisanlar {kosulCümlesi}", SQLBaglanti.Baglanti))
+                using ( SqlCommand command = new SqlCommand($"SELECT * FROM vCalisanlar {kosulCümlesi}", SQLBaglanti.Baglanti))
                 {
                     // Using satırında yaratılan command adlı nesne sadece 
                     //bu scopeda yaşayacak.Bu scope dışında yok olmuş olacak.
@@ -48,8 +48,8 @@ namespace PersonelTakipUygulaması.DataAccess
                                 PersonelNo = reader["PersonelNo"].ToString(),
                                 DogumTarihi = Convert.ToDateTime(reader["DogumTarihi"]),
                                 IseBaslamaTarihi = Convert.ToDateTime(reader["IseBaslamaTarihi"]),
-                                Departman = reader["Departman"].ToString(),
-                                Unvan = reader["Unvan"].ToString(),
+                                Departman =reader["Departman"].ToString(),
+                                Unvan =reader["Unvan"].ToString(),
                                 Durumu = reader["Durumu"].ToString()
                             };
 
@@ -83,7 +83,7 @@ namespace PersonelTakipUygulaması.DataAccess
                 string sorguCümlesi =
                     $"INSERT INTO tblCalisanlar" +
                     $"(Ad,Soyad,TcNo,PersonelNo,DogumTarihi,IseBaslamaTarihi," +
-                    $"Departman,Unvan,Durumu) VALUES " +
+                    $"DepartmanID,UnvanID,Durumu) VALUES " +
                     $"(@p1,@p2,@p3,@p4,@p5,@p6,@p7,@p8,@p9)";
                 try
                 {
@@ -135,7 +135,7 @@ namespace PersonelTakipUygulaması.DataAccess
 
                 string sorguCümlesi =
                     $"UPDATE tblCalisanlar Set Ad = @p1,Soyad = @p2,TcNo = @p3,PersonelNo = @p4,DogumTarihi = @p5 ," +
-                    $"IseBaslamaTarihi = @p6,Departman = @p7,Unvan = @p8,Durumu = @p9 WHERE ID = @p10";
+                    $"IseBaslamaTarihi = @p6,DepartmanID = @p7,UnvanID = @p8,Durumu = @p9 WHERE ID = @p10";
                 try
                 {
                     using (SqlCommand command = new SqlCommand(sorguCümlesi, SQLBaglanti.Baglanti))
@@ -257,8 +257,8 @@ namespace PersonelTakipUygulaması.DataAccess
                                     PersonelNo = okuyucu["PersonelNo"].ToString(),
                                     DogumTarihi = Convert.ToDateTime(okuyucu["DogumTarihi"]),
                                     IseBaslamaTarihi = Convert.ToDateTime(okuyucu["IseBaslamaTarihi"]),
-                                    Departman = okuyucu["Departman"].ToString(),
-                                    Unvan = okuyucu["Unvan"].ToString(),
+                                    Departman =okuyucu["DepartmanID"].ToString(),
+                                    Unvan =okuyucu["UnvanID"].ToString(),
                                     Durumu = okuyucu["Durumu"].ToString()
                                 };
                             }
